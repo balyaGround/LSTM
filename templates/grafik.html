@@ -1,0 +1,197 @@
+{% include 'header.html' %}
+
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-lg">
+                </div><!-- /.col -->
+            </div><!-- /.row -->
+        </div><!-- /.container-fluid -->
+    </div>
+    {% block content %}
+    <!-- Main content -->
+    <section class="content">
+        <!-- <form action="/klasifikasi" method="post"> -->
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg">
+                    <!-- Default box -->
+                    <div class="card">
+                        <div class="card-body"  overflow="scroll" max-width="100%" display="flex">
+                            <div class="form-group">
+                                <center>
+                                    <h5>Hasil</h5>
+                                </center>
+                               <div class="col-xs" overflow="hidden">
+                                    <center style="font-size: 9.5px">
+                                        {% for table in tables %}
+                                        {{table|safe }}
+                                        {% endfor %}
+                                    </center>
+                                </div>
+                            </div>             
+                        </div>
+                    </div>
+                    <div style="display:flex;flex-flow:row;">
+                        <div class="card" style="margin-right: 30px;">
+                            <div class="card-body"  overflow="scroll" max-width="100%" display= "flex">
+                                <div class="form-group">
+                                    <center>
+                                        <h5>Figures and Suplot</h5>
+                                    </center>
+                                    <center display="flex" flex-flow="row">
+                                        <img src="{{ url_for('static',filename='img/BoxCharts.png')}}" id="logo" width="1000px" />
+                                    </center>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="display:flex;flex-flow:row;">
+                        <div class="card" style="margin-right: 30px;">
+                            <div class="card-body"  overflow="scroll" max-width="100%" display= "flex">
+                                <div class="form-group">
+                                    <center>
+                                        <h5>Figure Diagrams Pie</h5>
+                                    </center>
+                                    <center display="flex" flex-flow="row">
+                                        <img src="{{ url_for('static',filename='img/PlotsCharts.png')}}" id="logo" width="1000px" />
+                                    </center>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.card-footer-->
+            </div>
+            <!-- /.card -->
+        </div>
+</div>
+</div>
+<!-- </form> -->
+
+</section>
+<!-- /.content -->
+</div>
+<!-- /.content-wrapper -->
+<!-- /.content -->
+</div>
+<!-- /.content-wrapper -->
+{% endblock %}
+
+{% include 'footer.html' %}
+
+
+<!-- <!DOCTYPE html> -->
+
+
+<!-- <html>
+
+     <div class="card">
+                            <div class="card-body"  overflow="scroll" max-width="100%" display= "flex">
+                                <div class="form-group">
+                                    <center>
+                                        <h5>Figures and Suplot</h5>
+                                    </center>
+                                    <center display="flex" flex-flow="row">
+                                        <img src="{{ url_for('static',filename='img/BoxCharts.png')}}" id="logo" width="800px" />
+                                    </center>
+                                    <div style="font-size: 10px" display="flex" flex-flow="row">
+                                        <p>Food: {{Foods}}</p>
+                                        <p>Palace: {{Palace}}</p>
+                                        <p>Service: {{Service}}</p>
+                                        <p>Price: {{Price}}</p>
+                                     </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        </div>
+
+                                        
+                        <div class="card">
+                        <div class="card-body"  overflow="scroll" max-width="100%" display="flex" >
+                            <div class="form-group">
+                                <div class="card-lg mt-5" display="flex" flex-flow="row">
+                                    <center>
+                                        <h5>Convert the predictions to a categorical format</h5>
+                                    </center>
+                                    <div class="mt-5">
+ 
+                                    <center>
+                                        <h5>Comment Count</h5>
+                                    </center>
+
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+<head>
+    <title> ARIMA</title>
+</head>
+
+<body>
+    <h1>Prediksi ARIMA</h1>
+    <div class="container">
+        <h2>WELCOME</h2>
+        <div>
+            {% for table in tables %}
+            {{titles[loop.index]}} -->
+<!-- {{ table|safe }}
+            {% endfor %}
+                    <div class="card">
+                        <div class="card-body"  overflow="scroll" max-width="100%" display="flex">
+                            <div class="form-group">
+                                <div class="card-lg mt-5">
+                                    <center>
+                                        <h5>Model Label Training & Sequential</h5>
+                                    </center>
+                                    <center>   
+                                        <img src="{{ url_for('static',filename='img/chart.png')}}" id="logo" width="1000px" />
+                                    </center>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                                <div class="card">
+                        <div class="card-body"  overflow="scroll" max-width="100%" display="flex">
+                            <div class="form-group">
+                                <center>
+                                    <h5>Plot the accuracy and loss curves</h5>
+                                </center>
+                                <div  display="flex" flex-flow="row">
+                                    <center>
+                                        <img src="{{ url_for('static',filename='img/chartAcc.png')}}" id="logo" width="400px" />
+                                        <img src="{{ url_for('static',filename='img/chartLos.png')}}" id="logo" width="400px" />
+                                    </center>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
+        </div>
+        <img src="data:image/png;base64, {{ plot_url }}" height="700" width="1000" />
+        {% if hasil %}
+        <p>tidak tepat waktu {{hasil|safe}}</p>
+        <P>tepat waktu {{hasil2|safe}}</P>
+        {% else %}
+        <p>data error</p>
+        {% endif %} -->
+<!-- <button>
+            <a href="/prediksi" class="text-center">Prediksi kembali!</a>
+        </button>
+    </div>
+    </div>
+</body>
+
+</html> -->

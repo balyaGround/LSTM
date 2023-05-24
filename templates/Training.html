@@ -1,0 +1,76 @@
+{% include 'header.html' %}
+
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-lg">
+                </div><!-- /.col -->
+            </div><!-- /.row -->
+        </div><!-- /.container-fluid -->
+    </div>
+    {% block content %}
+    <!-- Main content -->
+    <section class="content">
+        <!-- <form action="/klasifikasi" method="post"> -->
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg">
+                    <!-- Default box -->
+                    <div class="card">
+                        <div class="card-body"  overflow="scroll" max-width="100%" display="flex">
+                            <div class="form-group">
+                                <center>
+                                    <h5>Hasil</h5>
+                                </center>
+                               <div class="col-xs" overflow="hidden">
+                                    <center style="font-size: 9.5px">
+                                        {% for table in tables %}
+                                        {{table|safe }}
+                                        {% endfor %}
+                                    </center>
+                                </div>
+                            </div>             
+                        </div>
+                    </div>
+                    <div class="card-body"  overflow="scroll" max-width="100%" display="flex">
+                        <div class="form-group">
+                            <center>
+                                <h5>Plot the accuracy and loss curves</h5>
+                            </center>
+                            <div  display="flex" flex-flow="row">
+                                <center>
+                                    <img src="{{ url_for('static',filename='img/chartAcc.png')}}" id="logo" width="400px" />
+                                    <img src="{{ url_for('static',filename='img/chartLos.png')}}" id="logo" width="400px" />
+                                </center>
+                            </div>
+                            <center>
+                                <h5>Plot Confusion matrix</h5>
+                            </center>
+                            <div>
+                                <center>
+                                    <img src="{{ url_for('static',filename='img/matrix.png')}}" id="logo" width="400px" />
+                                </center>
+                            </div>
+                    </div>
+                </div>
+                <!-- /.card-footer-->
+            </div>
+            <!-- /.card -->
+        </div>
+</div>
+</div>
+<!-- </form> -->
+
+</section>
+<!-- /.content -->
+</div>
+<!-- /.content-wrapper -->
+<!-- /.content -->
+</div>
+<!-- /.content-wrapper -->
+{% endblock %}
+
+{% include 'footer.html' %}
